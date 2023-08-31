@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root to: 'items#index'
+  scope '/admin' do
+    resources :users
+  end
   resources :items
   resources :roles
   resources :users
