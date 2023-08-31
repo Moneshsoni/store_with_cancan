@@ -22,7 +22,9 @@ class ItemsController < ApplicationController
 
   # POST /items
   def create
+    binding.pry
     @item = Item.new(item_params)
+    @item.user_id = current_user.id
 
     if @item.save
       redirect_to @item, notice: 'Item was successfully created.'
