@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /items/new
